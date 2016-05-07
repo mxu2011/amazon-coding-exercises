@@ -58,4 +58,12 @@ public class FirstOddPickerTest {
         assertNotNull(c);
         assertEquals(Character.valueOf('c'), c);
     }
+
+    @Test
+    public void dIsTheFirstOddInLastPosition(){
+        Stream s = new DefaultStream("aaaAAAAAAd");
+        Character c = firstOddPicker.identifyFirstOddFromStream(s);
+        assertNotNull(c);
+        assertEquals(Character.valueOf('d'), c);
+    }
 }

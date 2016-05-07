@@ -19,7 +19,6 @@ public class DefaultStream implements Stream {
         counter = 0;
     }
 
-    @Override
     public char getNext() {
         if(hasNext()){
             return word.charAt(counter++);
@@ -28,7 +27,6 @@ public class DefaultStream implements Stream {
         return word.charAt(word.length() - 1);
     }
 
-    @Override
     public boolean hasNext() {
         return (counter < word.length());
     }
