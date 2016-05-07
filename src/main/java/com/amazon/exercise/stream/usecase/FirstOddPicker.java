@@ -15,6 +15,7 @@ import java.util.Set;
 public class FirstOddPicker {
     public Character identifyFirstOddFromStream(Stream stream) {
       	Set<Character> charsAlreadyRead = new LinkedHashSet<Character>();
+		Set<Character> charsAlreadyRemoved = new LinkedHashSet<Character>();
 		Character n = null;
 
 		if(null == stream){
@@ -26,7 +27,10 @@ public class FirstOddPicker {
 
 			if(charsAlreadyRead.contains(n)){
 				charsAlreadyRead.remove(n);
-			} else {
+				if (!charsAlreadyRemoved.contains(n)) {
+					charsAlreadyRemoved.add(n);
+				}
+			} else if (!charsAlreadyRemoved.contains(n)){
 				charsAlreadyRead.add(n);
 			}
 		}
