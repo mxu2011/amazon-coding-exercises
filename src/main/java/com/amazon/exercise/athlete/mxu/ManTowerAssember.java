@@ -15,6 +15,7 @@ public class ManTowerAssember implements Comparator<Athlete>{
         for (int i=0; i<athletes.size(); i++) {
             if (totalMass > athletes.get(i).getStrength()) {
                 athletes.remove(i);
+                i--;
                 continue;
             }
 
